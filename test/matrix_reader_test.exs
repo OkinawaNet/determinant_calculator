@@ -7,7 +7,7 @@ defmodule MatrixReaderTest do
   end
 
   test "Файл с норм данными" do
-    expected_matrix = Matrix.new([[1, 2], [1, 1]])
+    expected_matrix = Matrix.new([[1, -2], [1, 1]])
 
     assert read("test/fixtures/matrix_2_det_3") == expected_matrix
   end
