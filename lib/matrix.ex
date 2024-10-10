@@ -18,7 +18,11 @@ defmodule Matrix do
     first_column
     |> Enum.with_index()
     |> Enum.reduce(0, fn {value , n}, acc ->
-      acc + ((-1) ** n ) * value * do_determinator(drop_nth_elm(other_columns, n))
+      if value == 0 do
+        acc
+      else
+        acc + ((-1) ** n ) * value * do_determinator(drop_nth_elm(other_columns, n))
+      end
     end)
   end
 
