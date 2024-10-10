@@ -11,14 +11,18 @@ defmodule MatrixReader do
   def read(file_path) do
     file_path
     |> File.read!()
-    |> String.split("\n")
-    |> Enum.map(&parse_row/1)
-    |> Matrix.new
+    |> parse()
   end
 
-  @doc """
-    Бьет строку на список целых чисел
-  """
+  defp parse(""), do: Matrix.new()
+  defp parse(file_string) do
+    file_string
+    |> String.split("\n")
+    |> Enum.map(&parse_row/1)
+    |> Matrix.new()
+  end
+
+  defp parse_row(""), do: []
   defp parse_row(row) do
     row
     |> String.split(" ")
