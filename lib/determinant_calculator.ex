@@ -3,16 +3,10 @@ defmodule DeterminantCalculator do
   Documentation for `DeterminantCalculator`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> DeterminantCalculator.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def main do
+    MatrixReader.read("test/fixtures/matrix_10_det_3")
+    |> IO.inspect
   end
 end
+
+DeterminantCalculator.main()
