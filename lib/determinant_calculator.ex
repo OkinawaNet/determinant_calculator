@@ -3,12 +3,16 @@ defmodule DeterminantCalculator do
   Documentation for `DeterminantCalculator`.
   """
 
-
   def main do
-    MatrixReader.read("test/fixtures/matrix_2_det_3")
-    |> Matrix.determinator()
-    |> IO.inspect
+    args = System.argv()
+
+    MatrixReader.read(List.first(args))
+    |> IO.inspect()
+    |> Matrix.determinant()
+    |> IO.inspect()
   end
 end
 
-DeterminantCalculator.main()
+if Mix.env() == :dev do
+  DeterminantCalculator.main()
+end

@@ -3,8 +3,6 @@ defmodule MatrixReader do
     Модуль предназначен для чтения матрицы из файла
   """
 
-  import Matrix
-
   @doc """
     Читает файл и возвращает Matrix
   """
@@ -15,6 +13,7 @@ defmodule MatrixReader do
   end
 
   defp parse(""), do: Matrix.new()
+
   defp parse(file_string) do
     file_string
     |> String.split("\n")
@@ -23,6 +22,7 @@ defmodule MatrixReader do
   end
 
   defp parse_row(""), do: []
+
   defp parse_row(row) do
     row
     |> String.split(" ")

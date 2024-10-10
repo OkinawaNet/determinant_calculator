@@ -1,21 +1,77 @@
-# DeterminantCalculator
+# Определитель матрицы (Determinant Calculator)
 
-**TODO: Add description**
+Этот проект позволяет вычислять определитель матрицы произвольного порядка, используя Elixir. Пользователь может запустить программу с указанием файла, содержащего матрицу, и получить вычисленный определитель.
 
-## Installation
+## Требования
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `determinant_calculator` to your list of dependencies in `mix.exs`:
+- Erlang версии 25.3
+- Elixir версии 1.17.3
 
-```elixir
-def deps do
-  [
-    {:determinant_calculator, "~> 0.1.0"}
-  ]
-end
+## Установка
+
+### Шаг 1: Установка зависимостей
+
+Убедитесь, что у вас установлены Erlang и Elixir. Затем клонируйте репозиторий:
+
+```bash
+git clone https://github.com/OkinawaNet/determinant_calculator.git
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/determinant_calculator>.
+### Шаг 2: Переход в каталог проекта
 
+Перейдите в директорию проекта:
+
+```bash
+cd determinant_calculator
+```
+
+### Шаг 3: Установка зависимостей
+
+Выполните команду, чтобы установить необходимые зависимости:
+
+```bash
+mix deps.get
+```
+
+## Использование
+
+### Формат файла
+
+Для вычисления определителя создайте файл с матрицей в текстовом формате. Каждый ряд матрицы разделите новой строкой, а элементы в строках разделите пробелами. Например:
+
+**Для матрицы 2x2:**
+```
+1 2
+3 4
+```
+
+**Для матрицы 3x3:**
+```
+1 2 3
+4 5 6
+7 8 9
+```
+
+### Запуск программы
+
+Запустите программу, указав путь к файлу с матрицей:
+
+```bash
+mix run ./lib/determinant_calculator.ex путь_к_файлу
+```
+
+Пример:
+
+```bash
+mix run ./lib/determinant_calculator.ex ./path/to/matrix.txt
+```
+
+Программа прочитает матрицу из заданного файла и выведет результат вычисления определителя.
+
+## Тестирование
+
+Чтобы запустить тесты, выполните команду:
+
+```bash
+mix test
+```
